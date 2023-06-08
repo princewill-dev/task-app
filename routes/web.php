@@ -21,3 +21,6 @@ Route::get('/login', [LinkController::class, 'loginLink'])->name("login");
 Route::get('/comingsoon', function () { return view('comingsoon'); });
 Route::post('/signupFunction', [UserController::class, 'signupFunction']);
 Route::post('/loginFunction', [UserController::class, 'loginFunction']);
+Route::get('/dashboard', [LinkController::class, 'dashboardLink'])->middleware("auth");
+Route::get('/logout', [UserController::class, 'logoutFunction'])->middleware("auth");
+

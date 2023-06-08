@@ -13,4 +13,8 @@ class LinkController extends Controller
     public function loginLink() {
         return view('login');
     }
+
+    public function dashboardLink () {
+        return view('dashboard');
+    }
 }

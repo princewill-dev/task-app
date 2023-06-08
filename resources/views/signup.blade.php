@@ -46,6 +46,10 @@
                 <p class="text-center">
                     Already have an account ? <a href="/login" class="font-bold text-primary hover:underline">Sign In</a>
                 </p>
+                <br>
+                <div class="text-center">
+                    <a href="/" class="font-bold text-primary hover:underline">Home</a>
+                </div>
             </div>
         </div>
         <!-- end main content section -->

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -30,4 +31,50 @@ class UserController extends Controller
         return redirect()->route('login')->with('success', 'Registration successful. Please log in.');
 
     }
+
+    public function loginFunction(Request $request) {
+
+
+        $userdata = $request -> validate([
+            'email' => 'required|email',
+            'password' => 'required'
+        ]);
+
+        if(auth()->attempt(['email' => $userdata['email'], 'password' => $userdata['password']])){
+            $request->session()->regenerate();
+            //return 'login successful';
+            return redirect('dashboard')->with('success', 'login successful');
+            //return redirect()->intended('/dashboard');
+        }else {
+            //return 'login failed';
+            return redirect('/login')->with('faliure', 'email or password is incorrect');
+        }
+
+
+        // $credentials = $request->validate([
+        //     'email' => 'required|email',
+        //     'password' => 'required',
+        // ]);
+
+        // if (Auth::attempt($credentials)) {
+        //     return redirect()->intended('/dashboard');
+        // }
+        
+
+    }
+
+
+    public function logoutFunction()
+    {
+        Auth::logout();
+
+        return redirect()->route('login');
+    }
+
+    
+
+
+
+
+
 }
