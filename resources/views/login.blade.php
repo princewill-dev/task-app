@@ -1,8 +1,23 @@
 <x-homepage>
     <div class="main-container min-h-screen text-black dark:text-white-dark">
         <!-- start main content section -->
+
         <div class="flex min-h-screen items-center justify-center bg-[url('../images/map.svg')] bg-cover bg-center dark:bg-[url('../images/map-dark.svg')]">
+            
             <div class="panel m-6 w-full max-w-lg sm:w-[480px]">
+
+                <center>
+                    @if (session()->has('success'))
+                    <span class="mb-2 alert alert-success shadow-sm" style="color: green;">{{session('success')}}</span>
+                    @endif
+              
+                    @if (session()->has('faliure'))
+                    <span class="mb-2 alert alert-danger shadow-sm" style="color: red;">{{session('faliure')}}</span>
+                    @endif
+        
+                    
+                  </center>
+
                 <h2 class="mb-3 text-2xl font-bold">Login</h2>
                 <p class="mb-7">Enter your email and password to register</p>
                 <form class="space-y-5" method="POST">

@@ -5,23 +5,35 @@
             <div class="panel m-6 w-full max-w-lg sm:w-[480px]">
                 <h2 class="mb-3 text-2xl font-bold">Sign Up</h2>
                 <p class="mb-7">Enter your email and password to register</p>
-                <form class="space-y-5" method="POST">
+                <form class="space-y-5" action="/signupFunction" method="POST">
                     @csrf
                     <div>
-                        <label for="name">Name</label>
-                        <input id="name" type="text" class="form-input" placeholder="Enter Name" />
+                        <label for="name">Fullname</label>
+                        <input name="name" id="name" type="text" class="form-input" placeholder="Enter Fullname" value="{{ old('name') }}" />
+                        @error('name')
+                            <span class="mb-0 small alert alert-danger shadow-dm" style="color: red;">{{$message}}</span>
+                        @enderror
                     </div>
                     <div>
                         <label for="email">Email</label>
-                        <input id="email" type="email" class="form-input" placeholder="Enter Email" />
+                        <input name="email" id="email" type="email" class="form-input" placeholder="Enter Email" value="{{ old('email') }}" />
+                        @error('email')
+                            <span class="mb-0 small alert alert-danger shadow-dm" style="color: red;">{{$message}}</span>
+                        @enderror
                     </div>
                     <div>
                         <label for="password">Password</label>
-                        <input id="password" type="password" class="form-input" placeholder="Enter Password" />
+                        <input name="password" id="password" type="password" class="form-input" placeholder="Enter Password" />
+                        @error('password')
+                            <span class="mb-0 small alert alert-danger shadow-dm" style="color: red;">{{$message}}</span>
+                        @enderror
                     </div>
                     <div>
                         <label for="password">Confirm Password</label>
-                        <input id="password" type="password" class="form-input" placeholder="Confirm Password" />
+                        <input name="password_confirmation" id="password" type="password" class="form-input" placeholder="Confirm Password" />
+                        @error('password_confirmation')
+                            <span class="mb-0 small alert alert-danger shadow-dm" style="color: red;">{{$message}}</span>
+                        @enderror
                     </div>
                     <button type="submit" class="btn btn-primary w-full">SIGN UP</button>
                 </form>

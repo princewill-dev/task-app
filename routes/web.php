@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LinkController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +16,8 @@ use App\Http\Controllers\LinkController;
 */
 
 Route::get('/', function () { return view('home'); });
-Route::get('/signup', [LinkController::class, 'signupFunction']);
-Route::get('/login', [LinkController::class, 'loginFunction']);
+Route::get('/signup', [LinkController::class, 'signupLink']);
+Route::get('/login', [LinkController::class, 'loginLink'])->name("login");
 Route::get('/comingsoon', function () { return view('comingsoon'); });
+Route::post('/signupFunction', [UserController::class, 'signupFunction']);
+Route::post('/loginFunction', [UserController::class, 'loginFunction']);
