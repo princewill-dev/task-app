@@ -16,3 +16,5 @@ use App\Http\Controllers\LinkController;
 
 Route::get('/', function () { return view('home'); });
 Route::get('/signup', [LinkController::class, 'signupFunction']);
+Route::get('/login', [LinkController::class, 'loginFunction']);
+Route::get('/comingsoon', function () { return view('comingsoon'); });

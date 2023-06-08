@@ -9,4 +9,8 @@ class LinkController extends Controller
     public function signupFunction() {
         return view('signup');
     }
+
+    public function loginFunction() {
+        return view('login');
+    }
 }
