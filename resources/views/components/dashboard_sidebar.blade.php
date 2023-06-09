@@ -427,7 +427,7 @@
                 </li>
 
                 <li class="menu nav-item">
-                    <a href="dragndrop.html" class="nav-link group">
+                    <a href="/logout" class="nav-link group">
                         <div class="flex items-center">
                             <svg
                                 class="shrink-0 group-hover:!text-primary"
