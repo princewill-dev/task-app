@@ -17,4 +17,8 @@ class LinkController extends Controller
     public function dashboardLink () {
         return view('dashboard');
     }
+
+    public function savednotes() {
+        return view('savednotes');
+    }
 }

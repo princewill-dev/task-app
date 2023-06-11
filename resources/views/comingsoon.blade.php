@@ -6,7 +6,7 @@
                 <h2 class="mb-3 text-2xl font-bold">Coming Soon</h2>
                 <p class="mb-7">We are currently working on this projects, it will be availble soon</p>
                 <br>
-                <a href="/" class="btn btn-primary w-full">Back</a>
+                <a href="/" class="btn btn-primary w-full">Back   </a>
             </div>
         </div>
         <!-- end main content section -->

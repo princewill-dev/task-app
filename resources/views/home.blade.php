@@ -10,18 +10,18 @@
                 <div class="" style="display: flex; justify-content: space-evenly; flex-wrap:wrap;">
                     <div x-data="modal">
                         <!-- button -->    
-                        <button type="button" class="btn btn-primary mt-6" @click="toggle">Task Manager</button>
+                        <button type="button" class="btn btn-primary mt-6" @click="toggle">Note Saver</button>
                         
                         <!-- modal --> 
                         <div class="fixed inset-0 bg-[black]/60 z-[999] hidden overflow-y-auto" :class="open && '!block'">
                             <div class="flex items-start justify-center min-h-screen px-4" @click.self="open = false">
                                 <div x-show="open" x-transition x-transition.duration.300 class="panel border-0 p-0 rounded-lg overflow-hidden  w-full max-w-sm my-8">
                                     <div class="flex bg-[#fbfbfb] dark:bg-[#121c2c] items-center justify-between px-5 py-3">
-                                        <h5 class="font-bold text-lg">Task Manager</h5>
+                                        <h5 class="font-bold text-lg">Note Saver</h5>
                                     </div>
                                     <div class="p-5">
                                         <div class="dark:text-white-dark/70 text-base font-medium text-[#1f2937]">
-                                            <p>Streamline your workflow, prioritize with precision, and conquer deadlines with ease. Experience a new level of control and organization as you conquer your to-do list effortlessly. Revolutionize your productivity with our task management website and unlock your true potential.</p>
+                                            <p>the perfect digital companion for capturing and organizing your thoughts. Say goodbye to scattered notes and hello to streamlined productivity. Our intuitive platform allows you to create, edit, and store your notes with ease.</p>
                                         </div>
                                         <div class="flex justify-end items-center mt-8">
                                             <button type="button" class="btn btn-outline-danger" @click="toggle">Back</button>
