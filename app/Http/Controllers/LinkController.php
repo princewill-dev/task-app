@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-//use Illuminate\Http\Request;
 use App\Models\Note;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Crypt;
 
 class LinkController extends Controller
 {
@@ -18,13 +18,6 @@ class LinkController extends Controller
 
     public function dashboardLink () {
 
-        // $user = Auth::user();
-        // $noteCount = $user->notes()->count();
-
-        // return view('dashboard')->with('noteCount', $noteCount);
-
-        //return view('dashboard');
-
         $user = Auth::user();
         $notes = Note::where('user_id', $user->id)->get();
         $noteCount = $notes->count();
@@ -33,6 +26,22 @@ class LinkController extends Controller
     }
 
     public function savednotes() {
-        return view('savednotes');
+        // $user = Auth::user();
+        // $notes = Note::where('user_id', $user->id)->get();
+        // $noteCount = $notes->count();
+        // return view('savednotes', compact('notes', 'noteCount'));
+
+        $user = Auth::user();
+        $notes = Note::where('user_id', $user->id)->get();
+
+        // Decrypt the notes' title and description
+        foreach ($notes as $note) {
+            $note->title = Crypt::decryptString($note->title);
+            $note->description = Crypt::decryptString($note->description);
+        }
+
+        $noteCount = $notes->count();
+
+        return view('savednotes', compact('notes', 'noteCount'));
     }
 }

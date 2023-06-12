@@ -25,5 +25,6 @@ Route::post('/loginFunction', [UserController::class, 'loginFunction']);
 Route::get('/dashboard', [LinkController::class, 'dashboardLink'])->middleware("auth");
 Route::get('/logout', [UserController::class, 'logoutFunction'])->middleware("auth");
 Route::post('/saveNoteFunction', [SavenoteController::class, 'saveNoteFunction'])->middleware("auth")->name('saveNoteFunction');
+Route::post('/saveNoteFromViews', [SavenoteController::class, 'saveNoteFromViews'])->middleware("auth")->name('saveNoteFromViews');
 Route::get('/savednotes', [LinkController::class, 'savednotes'])->middleware("auth");
 
