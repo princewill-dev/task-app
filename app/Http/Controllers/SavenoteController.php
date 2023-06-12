@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Note;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Crypt;
 
 class SavenoteController extends Controller
@@ -23,20 +24,31 @@ class SavenoteController extends Controller
 
 
         $noteData = $request->validate([
-            'title' => 'required|srting|max:2000',
+            'title' => 'required|string|max:2000',
             'description' => 'required|string|max:5000'
         ]);
 
-        $encryptedTitle = Crypt::encryptString($noteData['description']);
+        $encryptedTitle = Crypt::encryptString($noteData['title']);
         $encryptedDescription = Crypt::encryptString($noteData['description']);
 
         $noteData = new Note;
         $noteData->title = $encryptedTitle;
         $noteData->description = $encryptedDescription;
         $noteData->code = $code;
-        
+        $noteData['user_id'] = auth()->id();
+        $noteData->save();
 
+        return redirect("dashboard")->with('success', 'Note up saved successfully');
 
+        //return redirect("dashboard")->with(['noteCount' => $noteCount, 'success' => 'Note saved successfully']);
         
     }
+
+    // public function showDashboard() {
+    //     $user = Auth::user();
+    //     $noteCount = $user->notes()->count();
+
+    //     return view('dashboard')->with('noteCount', $noteCount);
+    // }
+
 }

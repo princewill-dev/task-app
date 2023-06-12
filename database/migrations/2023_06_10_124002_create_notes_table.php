@@ -14,12 +14,12 @@ return new class extends Migration
         Schema::create('notes', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->string('title');
+            $table->longText('title');
             $table->longText('description');
             $table->string('code');
-            $table->string('status');
-            $table->string('is_favourite');
-            $table->string('color_tag');
+            $table->string('status')->default('active');
+            $table->string('is_favourite')->default(0);
+            $table->string('color_tag')->default('none');
             $table->timestamps();
         });
     }
