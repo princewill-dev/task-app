@@ -217,13 +217,14 @@
                                                             </div>
                     
                                                             <div class="p-5">
-                                                                <form method="POST" action="saveNoteFunction">
+                                                                <form method="POST" action="{{ route('deleteNote', $note) }}">
                                                                     @csrf
+                                                                    @method('DELETE')
                                                                     <p>Are you sure you want to delete this note?</p>
                                                                     
                                                                     <div class="flex justify-end items-center mt-8">
                                                                         <button type="button" class="btn btn-outline-danger" @click="toggle">Cancel</button>
-                                                                        <button type="submit" class="btn btn-primary ltr:ml-4 rtl:mr-4" >Proceed</button>
+                                                                        <button type="submit" class="btn btn-primary ltr:ml-4 rtl:mr-4" >Yes</button>
                                                                     </div>
                                                                 </form>
                                                             </div>

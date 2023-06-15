@@ -28,4 +28,5 @@ Route::post('/saveNoteFunction', [SavenoteController::class, 'saveNoteFunction']
 Route::post('/saveNoteFromViews', [SavenoteController::class, 'saveNoteFromViews'])->middleware("auth")->name('saveNoteFromViews');
 Route::get('/savednotes', [LinkController::class, 'savednotes'])->middleware("auth");
 Route::put('/editNoteFunction/{note}', [SavenoteController::class, 'editNoteFunction'])->middleware("auth")->name('editNote');
+Route::delete('/deleteNoteFunction/{note}', [SavenoteController::class, 'deleteNoteFunction'])->middleware("auth")->name('deleteNote');
 

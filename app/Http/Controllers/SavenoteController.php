@@ -81,4 +81,11 @@ class SavenoteController extends Controller
         return redirect("savednotes")->with('success', 'Note editted successfully');
     }
 
+    public function deleteNoteFunction(Note $note)
+    {
+        $note->delete();
+
+        return redirect("savednotes")->with('success', 'Note deleted successfully');
+    }
+
 }
