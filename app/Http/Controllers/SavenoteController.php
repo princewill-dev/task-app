@@ -71,4 +71,14 @@ class SavenoteController extends Controller
             'description' => $encryptedDescription,
         ];
     }
+
+    public function editNoteFunction(Request $request, Note $note)
+    {
+        $note->title = Crypt::encryptString($request->input('title'));
+        $note->description = Crypt::encryptString($request->input('description'));
+        $note->save();
+
+        return redirect("savednotes")->with('success', 'Note editted successfully');
+    }
+
 }

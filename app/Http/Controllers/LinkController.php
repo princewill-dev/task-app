@@ -26,10 +26,6 @@ class LinkController extends Controller
     }
 
     public function savednotes() {
-        // $user = Auth::user();
-        // $notes = Note::where('user_id', $user->id)->get();
-        // $noteCount = $notes->count();
-        // return view('savednotes', compact('notes', 'noteCount'));
 
         $user = Auth::user();
         $notes = Note::where('user_id', $user->id)->get();

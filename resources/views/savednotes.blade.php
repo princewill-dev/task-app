@@ -84,7 +84,10 @@
                             <div class="max-w-[19rem] w-full bg-white shadow-[4px_6px_10px_-3px_#bfc9d4] rounded border border-[#e0e6ed] dark:border-[#1b2e4b] dark:bg-[#191e3a] dark:shadow-none" style="margin: 3px;">
                                 <div class="py-7 px-6">
                                     <h5 class="text-[#3b3f5c] text-xl font-semibold mb-4 dark:text-white-light">Title: {{ $note->title }}</h5>
-                                    <p class="text-white-dark">Description: {{ $note->description }}</p>
+                                    <hr>
+                                    <p class="text-white-dark" style="padding: 5px;">Description: {{ $note->description }}</p>
+                                    <br>
+                                    <hr>
                                     <br>
                                     <div class="flex items-center justify-between">
                                         
@@ -131,21 +134,23 @@
                                                             </div>
                     
                                                             <div class="p-5">
-                                                                <form method="POST" action="saveNoteFunction">
+                                                                <form method="POST" action="{{ route('editNote', $note) }}">
                                                                     @csrf
+                                                                    @method('PUT')
+                                                                    
                                                                     <div class="mb-5">
                                                                         <label for="title">Title</label>
-                                                                        <input id="title" name="title" type="text" placeholder="Enter Title" class="form-input" x-model="params.title" />
+                                                                        <input id="title" name="title" type="text" placeholder="Enter Title" class="form-input" value="{{ $note->title }}" />
                                                                     </div>
                                                                     
                                                                     <div class="mb-5">
                                                                         <label for="desc">Description</label>
-                                                                        <textarea name="description"  id="desc"  rows="3" class="form-textarea min-h-[130px] resize-none" placeholder="Enter Description" x-model="params.description" ></textarea>
+                                                                        <textarea name="description"  id="desc"  rows="3" class="form-textarea min-h-[130px] resize-none" placeholder="Enter Description">{{ $note->description }}</textarea>
                                                                     </div>
                                                                     
                                                                     <div class="flex justify-end items-center mt-8">
                                                                         <button type="button" class="btn btn-outline-danger" @click="toggle">Cancel</button>
-                                                                        <button type="submit" class="btn btn-primary ltr:ml-4 rtl:mr-4" >Proceed</button>
+                                                                        <button type="submit" class="btn btn-primary ltr:ml-4 rtl:mr-4" >Save</button>
                                                                     </div>
                                                                 </form>
                                                             </div>
