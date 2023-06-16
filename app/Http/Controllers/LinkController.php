@@ -62,6 +62,11 @@ class LinkController extends Controller
         return view('savedurls', compact('urls', 'urlCount'));
     }
 
+    public function resetPassword()
+    {
+        return view('reset-password');
+    }
+
 
 
 }

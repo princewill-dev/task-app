@@ -134,7 +134,7 @@
                                     </div>
                                 </div>
 
-                                <div class="group rounded border border-[#e0e6ed] transition-all duration-300 dark:border-[#1b2e4b]">
+                                <div class="group rounded border border-[#e0e6ed] transition-all duration-300 dark:border-[#1b2e4b]" style="display: none;">
                                     <div class="border-b border-[#e0e6ed] p-5 pt-0 dark:border-[#1b2e4b]">
                                         <span
                                             class="-mt-[30px] flex h-[70px] w-[70px] items-center justify-center rounded border-2 border-primary bg-white text-xl font-bold text-[#3b3f5c] shadow-[0_0_15px_1px_rgba(113,106,202,0.20)] transition-all duration-300 group-hover:-translate-y-[10px] dark:bg-[#0e1726] dark:text-white-light lg:h-[100px] lg:w-[100px] lg:text-3xl"

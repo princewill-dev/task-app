@@ -387,7 +387,7 @@
                         </li>
 
 
-                        <li class="menu nav-item">
+                        {{-- <li class="menu nav-item">
                             <a href="#" class="nav-link group">
                                 <div class="flex items-center">
                                     <svg
@@ -423,7 +423,7 @@
                                     <span class="text-black ltr:pl-3 rtl:pr-3 dark:text-[#506690] dark:group-hover:text-white-dark">File Upload</span>
                                 </div>
                             </a>
-                        </li>
+                        </li> --}}
 
 
                     </ul>
@@ -445,7 +445,7 @@
                 </h2>
 
                 <li class="menu nav-item">
-                    <a href="#" class="nav-link group">
+                    <a href="/profile" class="nav-link group">
                         <div class="flex items-center">
                             <svg
                                 class="shrink-0 group-hover:!text-primary"

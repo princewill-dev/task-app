@@ -36,15 +36,22 @@
                     </div>
                     <button type="submit" class="btn btn-primary w-full">Login</button>
                 </form>
-                <div
-                    class="relative my-7 h-5 text-center before:absolute before:inset-0 before:m-auto before:h-[1px] before:w-full before:bg-[#ebedf2] dark:before:bg-[#253b5c]"
-                >
-                    <div class="relative z-[1] inline-block bg-white px-2 font-bold text-white-dark dark:bg-[#0e1726]"><span>OR</span></div>
-                </div>
+
+                <p class="text-center">
+                    <br>
+                    Forgot password? <a href="/reset-password" class="font-bold text-primary hover:underline">reset</a>
+                </p>
+
+                {{-- <div
+                    class="relative my-7 h-5 text-center before:absolute before:inset-0 before:m-auto before:h-[1px] before:w-full before:bg-[#ebedf2] dark:before:bg-[#253b5c]" >
+                    <div class="relative z-[1] inline-block bg-white px-2 font-bold text-white-dark dark:bg-[#0e1726]"><span></span></div>
+                </div> --}}
                 
                 <p class="text-center">
                     Don't have an account ? <a href="/signup" class="font-bold text-primary hover:underline">Sign up</a>
                 </p>
+                <br>
+                <hr>
                 <br>
                 <div class="text-center">
                     <a href="/" class="font-bold text-primary hover:underline">Home</a>

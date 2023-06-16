@@ -60,11 +60,9 @@
                     </div>
                     
                     <!-- small -->
-                    <div x-data="modal">
-                        <!-- button -->
+                    {{-- <div x-data="modal">
                         <button type="button" class="btn btn-primary mt-6" @click="toggle">File Saver</button>
-                            
-                        <!-- modal --> 
+                        
                         <div class="fixed inset-0 bg-[black]/60 z-[999] hidden overflow-y-auto" :class="open && '!block'">
                             <div class="flex items-start justify-center min-h-screen px-4" @click.self="open = false">
                                 <div x-show="open" x-transition x-transition.duration.300 class="panel border-0 p-0 rounded-lg overflow-hidden  w-full max-w-sm my-8">
@@ -83,7 +81,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                     
                     <!-- script -->
                     <script>
