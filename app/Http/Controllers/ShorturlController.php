@@ -37,4 +37,11 @@ class ShorturlController extends Controller
         $url->save();
         return redirect("dashboard")->with('success', 'url saved successfully');
     }
+
+    public function deleteUrlFunction(Url $url)
+    {
+        $url->delete();
+
+        return redirect("savedurls")->with('success', 'URL deleted successfully');
+    }
 }

@@ -154,7 +154,7 @@
                                                             </div>
                     
                                                             <div class="p-5">
-                                                                <form method="POST" action="{{ route('deleteNote', $url) }}">
+                                                                <form method="POST" action="{{ route('deleteUrl', $url) }}">
                                                                     @csrf
                                                                     @method('DELETE')
                                                                     <p>Are you sure you want to delete this note?</p>
