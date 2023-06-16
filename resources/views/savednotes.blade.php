@@ -85,7 +85,7 @@
                                 <div class="py-7 px-6">
                                     <h5 class="text-[#3b3f5c] text-xl font-semibold mb-4 dark:text-white-light">Title: {{ $note->title }}</h5>
                                     <hr>
-                                    <p class="text-white-dark" style="padding: 5px;">Description: {{ $note->description }}</p>
+                                    <p class="text-white-dark" style="padding: 5px;"> {{ $note->description }}</p>
                                     <br>
                                     <hr>
                                     <br>

@@ -84,7 +84,7 @@
                                     <div class="border-b border-[#e0e6ed] p-5 pt-0 dark:border-[#1b2e4b]">
                                         <span
                                             class="-mt-[30px] flex h-[70px] w-[70px] items-center justify-center rounded border-2 border-primary bg-white text-xl font-bold text-[#3b3f5c] shadow-[0_0_15px_1px_rgba(113,106,202,0.20)] transition-all duration-300 group-hover:-translate-y-[10px] dark:bg-[#0e1726] dark:text-white-light lg:h-[100px] lg:w-[100px] lg:text-3xl"
-                                            >0</span
+                                            >{{ $urlCount }}</span
                                         >
                                         <h3 class="mt-4 mb-2.5 text-xl lg:text-2xl">Shortened URLs</h3>
                                         <p class="text-[15px]">Shorten, share, succeed: Unlock the potential of compact links.</p>
@@ -106,17 +106,18 @@
                                                         </div>
     
                                                         <div class="p-5">
-                                                            <form method="POST" action="">
+                                                            <form method="POST" action="{{ route('saveurl') }}">
+
                                                                 @csrf
 
                                                                 <div class="mb-5">
                                                                     <label for="desc">Tag</label>
-                                                                    <input id="title" name="title" type="text" placeholder="Enter a tag" class="form-input" x-model="params.title" />
+                                                                    <input id="title" name="tag" type="text" placeholder="Enter a tag" class="form-input" x-model="params.title" />
                                                                 </div>
 
                                                                 <div class="mb-5">
                                                                     <label for="title">Paste Long URL</label>
-                                                                    <input id="title" name="title" type="text" placeholder="Enter Long URL" class="form-input" x-model="params.title" />
+                                                                    <input id="title" name="main_url" type="text" placeholder="Enter Long URL" class="form-input" x-model="params.title" />
                                                                 </div>
                                                                 
                                                                 <div class="flex justify-end items-center mt-8">

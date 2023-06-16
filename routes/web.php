@@ -2,8 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LinkController;
-use App\Http\Controllers\SavenoteController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\SavenoteController;
+use App\Http\Controllers\ShorturlController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,4 +30,5 @@ Route::post('/saveNoteFromViews', [SavenoteController::class, 'saveNoteFromViews
 Route::get('/savednotes', [LinkController::class, 'savednotes'])->middleware("auth");
 Route::put('/editNoteFunction/{note}', [SavenoteController::class, 'editNoteFunction'])->middleware("auth")->name('editNote');
 Route::delete('/deleteNoteFunction/{note}', [SavenoteController::class, 'deleteNoteFunction'])->middleware("auth")->name('deleteNote');
+Route::post('/saveurlFunction', [ShorturlController::class, 'saveurlFunction'])->middleware("auth")->name('saveurl');
 

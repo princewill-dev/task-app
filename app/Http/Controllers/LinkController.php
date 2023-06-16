@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Url;
 use App\Models\Note;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Crypt;
@@ -19,10 +20,14 @@ class LinkController extends Controller
     public function dashboardLink () {
 
         $user = Auth::user();
+
         $notes = Note::where('user_id', $user->id)->get();
         $noteCount = $notes->count();
 
-        return view('dashboard', compact('notes', 'noteCount'));
+        $url = Url::where('user_id', $user->id)->get();
+        $urlCount = $url->count();
+
+        return view('dashboard', compact('notes', 'noteCount', 'url', 'urlCount'));
     }
 
     public function savednotes() {
