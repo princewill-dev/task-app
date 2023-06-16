@@ -88,7 +88,7 @@
                                         >
                                         <h3 class="mt-4 mb-2.5 text-xl lg:text-2xl">Shortened URLs</h3>
                                         <p class="text-[15px]">Shorten, share, succeed: Unlock the potential of compact links.</p>
-                                        <a href="#" class="btn btn-outline-primary btn-sm" style="float: right;">view links</a>
+                                        <a href="/savedurls" class="btn btn-outline-primary btn-sm" style="float: right;">view links</a>
                                         <br>
                                     </div>
 

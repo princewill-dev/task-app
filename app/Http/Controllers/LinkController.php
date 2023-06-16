@@ -45,4 +45,24 @@ class LinkController extends Controller
 
         return view('savednotes', compact('notes', 'noteCount'));
     }
+
+    public function savedurls() {
+
+        $user = Auth::user();
+        $urls = Url::where('user_id', $user->id)->get();
+
+        // Decrypt the urls
+        foreach ($urls as $url) {
+            $url->tag = Crypt::decryptString($url->tag);
+            $url->main_url = Crypt::decryptString($url->main_url);
+            //$url->shortcode = $url->shortcode;
+        }
+
+        $urlCount = $urls->count();
+
+        return view('savedurls', compact('urls', 'urlCount'));
+    }
+
+
+
 }
