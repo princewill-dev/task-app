@@ -6,8 +6,8 @@
         <div class="h-full bg-white dark:bg-[#0e1726]">
             <div class="flex items-center justify-between px-4 py-3">
                 <a href="index.html" class="main-logo flex shrink-0 items-center">
-                    <img class="ml-[5px] w-8 flex-none" src="assets/images/logo.svg" alt="image" />
-                    <span class="align-middle text-2xl font-semibold ltr:ml-1.5 rtl:mr-1.5 dark:text-white-light lg:inline">VRISTO</span>
+                    {{-- <img class="ml-[5px] w-8 flex-none" src="assets/images/logo.svg" alt="image" /> --}}
+                    <span class="align-middle text-2xl font-semibold ltr:ml-1.5 rtl:mr-1.5 dark:text-white-light lg:inline">TASKER</span>
                 </a>
                 <a
                     href="javascript:;"
@@ -42,7 +42,7 @@
                     >
                         <line x1="5" y1="12" x2="19" y2="12"></line>
                     </svg>
-                    <span>Apps</span>
+                    <span>Activities</span>
                 </h2>
 
                 <li class="nav-item">
@@ -174,7 +174,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="apps-notes.html" class="group">
+                            <a href="/savednotes" class="group">
                                 <div class="flex items-center">
                                     <svg
                                         class="shrink-0 group-hover:!text-primary"
@@ -359,7 +359,7 @@
                         </li> --}}
 
                         <li class="menu nav-item">
-                            <a href="font-icons.html" class="nav-link group">
+                            <a href="/savedurls" class="nav-link group">
                                 <div class="flex items-center">
                                     <svg
                                         class="shrink-0 group-hover:!text-primary"
@@ -388,7 +388,7 @@
 
 
                         <li class="menu nav-item">
-                            <a href="dragndrop.html" class="nav-link group">
+                            <a href="#" class="nav-link group">
                                 <div class="flex items-center">
                                     <svg
                                         class="shrink-0 group-hover:!text-primary"
@@ -445,7 +445,7 @@
                 </h2>
 
                 <li class="menu nav-item">
-                    <a href="dragndrop.html" class="nav-link group">
+                    <a href="#" class="nav-link group">
                         <div class="flex items-center">
                             <svg
                                 class="shrink-0 group-hover:!text-primary"

@@ -33,7 +33,7 @@ class LinkController extends Controller
     public function savednotes() {
 
         $user = Auth::user();
-        $notes = Note::where('user_id', $user->id)->get();
+        $notes = Note::where('user_id', $user->id)->orderBy('created_at', 'desc')->get();
 
         // Decrypt the notes' title and description
         foreach ($notes as $note) {
@@ -49,13 +49,12 @@ class LinkController extends Controller
     public function savedurls() {
 
         $user = Auth::user();
-        $urls = Url::where('user_id', $user->id)->get();
+        $urls = Url::where('user_id', $user->id)->orderBy('created_at', 'desc')->get();
 
         // Decrypt the urls
         foreach ($urls as $url) {
             $url->tag = Crypt::decryptString($url->tag);
             $url->main_url = Crypt::decryptString($url->main_url);
-            //$url->shortcode = $url->shortcode;
         }
 
         $urlCount = $urls->count();

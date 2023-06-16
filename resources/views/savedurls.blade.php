@@ -35,7 +35,7 @@
                                     <line x1="12" y1="5" x2="12" y2="19"></line>
                                     <line x1="5" y1="12" x2="19" y2="12"></line>
                                 </svg>
-                                Create a new note
+                                Create a new link
                             </button>
                             
                             <!-- modal --> 
@@ -43,21 +43,21 @@
                                 <div class="flex items-start justify-center min-h-screen px-4" @click.self="open = false">
                                     <div x-show="open" x-transition x-transition.duration.300 class="panel border-0 p-0 rounded-lg overflow-hidden  w-full max-w-sm my-8">
                                         <div class="flex bg-[#fbfbfb] dark:bg-[#121c2c] items-center justify-between px-5 py-3">
-                                            <h5 class="font-bold text-lg">New Note</h5>
+                                            <h5 class="font-bold text-lg">New Link</h5>
                                         </div>
 
                                         <div class="p-5">
-                                            <form method="POST" action="{{ route('saveNoteFromViews') }}">
+                                            <form method="POST" action="{{ route('saveUrlFromViews') }}">
                                                 @csrf
 
                                                 <div class="mb-5">
-                                                    <label for="title">Title</label>
-                                                    <input id="title" name="title" type="text" placeholder="Enter Title" class="form-input" x-model="params.title" />
+                                                    <label for="title">Tag</label>
+                                                    <input id="title" name="tag" type="text" placeholder="Enter Title" class="form-input" />
                                                 </div>
                                                 
                                                 <div class="mb-5">
-                                                    <label for="desc">Description</label>
-                                                    <textarea name="description"  id="desc"  rows="3" class="form-textarea min-h-[130px] resize-none" placeholder="Enter Description" x-model="params.description" ></textarea>
+                                                    <label for="desc">Paste Long URL</label>
+                                                    <textarea name="main_url"  id="desc"  rows="3" class="form-textarea min-h-[130px] resize-none" placeholder="Paste Long URL" ></textarea>
                                                 </div>
                                                 
                                                 <div class="flex justify-end items-center mt-8">

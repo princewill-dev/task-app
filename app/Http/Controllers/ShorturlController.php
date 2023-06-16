@@ -35,7 +35,7 @@ class ShorturlController extends Controller
         $url->shortcode = $code;
         $url['user_id'] = auth()->id();
         $url->save();
-        return redirect("dashboard")->with('success', 'url saved successfully');
+        return redirect("savedurls")->with('success', 'url saved successfully');
     }
 
     public function deleteUrlFunction(Url $url)
@@ -43,5 +43,33 @@ class ShorturlController extends Controller
         $url->delete();
 
         return redirect("savedurls")->with('success', 'URL deleted successfully');
+    }
+
+    public function saveUrlFromViews(Request $request)
+    {
+        $code = $this->generateRandomString();
+
+        $urlData = $request->validate([
+            'tag' => 'required|string|max:2000',
+            'main_url' => 'required|string|max:5000',
+        ]);
+
+        // $encryptedNoteData = $this->encryptNoteData($urlData);
+
+        // $note = new Note;
+        // $note->title = $encryptedNoteData['title'];
+        // $note->description = $encryptedNoteData['description'];
+        // $note->code = $code;
+        // $note['user_id'] = auth()->id();
+        // $note->save();
+
+        $url = new Url;
+        $url->tag = Crypt::encryptString($urlData['tag']);
+        $url->main_url = Crypt::encryptString($urlData['main_url']);
+        $url->shortcode = $code;
+        $url['user_id'] = auth()->id();
+        $url->save();
+        return redirect("savedurls")->with('success', 'url saved successfully');
+
     }
 }

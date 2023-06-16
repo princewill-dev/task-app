@@ -33,4 +33,5 @@ Route::delete('/deleteNoteFunction/{note}', [SavenoteController::class, 'deleteN
 Route::post('/saveurlFunction', [ShorturlController::class, 'saveurlFunction'])->middleware("auth")->name('saveurl');
 Route::get('/savedurls', [LinkController::class, 'savedurls'])->middleware("auth");
 Route::delete('/deleteUrlFunction/{url}', [ShorturlController::class, 'deleteUrlFunction'])->middleware("auth")->name('deleteUrl');
+Route::post('/saveUrlFromViews', [ShorturlController::class, 'saveUrlFromViews'])->middleware("auth")->name('saveUrlFromViews');
 
