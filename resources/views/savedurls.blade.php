@@ -86,7 +86,7 @@
                                     <h5 class="text-[#3b3f5c] text-xl font-semibold mb-4 dark:text-white-light">Tag: {{ $url->tag }}</h5>
                                     <hr>
                                     <br>
-                                    <label for="desc">Long link: </label>
+                                    <label for="desc">Long link:</label>
                                     <textarea disabled name="description"  id="desc"  rows="3" class="form-textarea min-h-[70px] resize-none" placeholder="Long Link">{{ $url->main_url }}</textarea>
                                     <br>
                                     <br>
@@ -171,12 +171,12 @@
                                                 </div>
                                             </div>
 
-                                            <p id="text-to-copy" style="display: none;">task.princewilldev.com/{{ $url->shortcode }}</p>
+                                            <p id="text-to-copy{{ $url->id }}" style="display: none;">task.princewilldev.com/{{ $url->shortcode }}</p>
 
-                                            <span class="copy-button" onclick="copyToClipboard('text-to-copy')" style="cursor: pointer; color: blue; text-decoration: underline; border: 2px solid blue; padding: 0px 10px; margin-left: 15px;">Copy</span>
+                                            <span class="copy-button{{ $url->id }}" onclick="copyToClipboard{{ $url->id }}('text-to-copy{{ $url->id }}')" style="cursor: pointer; color: blue; text-decoration: underline; border: 2px solid blue; padding: 0px 10px; margin-left: 15px;">Copy</span>
 
                                             <script>
-                                                function copyToClipboard(elementId) {
+                                                function copyToClipboard{{ $url->id }}(elementId) {
                                                     const textElement = document.getElementById(elementId);
                                                     const text = textElement.textContent;
                                         
@@ -189,7 +189,7 @@
                                                     document.body.removeChild(textField);
                                         
                                                     // Optional: Provide visual feedback
-                                                    const copyButton = document.querySelector('.copy-button');
+                                                    const copyButton = document.querySelector('.copy-button{{ $url->id }}');
                                                     copyButton.textContent = 'Copied!';
                                                     setTimeout(() => {
                                                         copyButton.textContent = 'Copy';
