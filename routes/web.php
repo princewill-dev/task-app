@@ -53,3 +53,5 @@ Route::post('/saveUrlFromViews', [ShorturlController::class, 'saveUrlFromViews']
 
 Route::get('/reset-password', [LinkController::class, 'resetPassword']);
 
+Route::get('/resetPasswordFunction', [LinkController::class, 'resetPasswordFunction'])->name('resetPassword');
+
